@@ -1,5 +1,6 @@
 package com.example.praktikummobile
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var etHeight: EditText
     private lateinit var btnCalculate: Button
     private lateinit var tvResult: TextView
+    private lateinit var btnMove: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +31,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tvResult = findViewById(R.id.tv_hasil)
         btnCalculate = findViewById(R.id.btn_hitung)
         btnCalculate.setOnClickListener(this)
+        btnMove = findViewById(R.id.btn_move_profile)
+        btnMove.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -62,8 +66,12 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 // Tambahkan Toast
                 Toast.makeText(applicationContext, tvResult.text, Toast.LENGTH_LONG).show()
             }
-
+        } else if (v.id == R.id.btn_move_profile){
+            val inten = Intent(this@MainActivity, Profile::class.java)
+            startActivity(inten)
         }
     }
+
+
 
 }

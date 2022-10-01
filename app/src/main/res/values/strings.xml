@@ -3,6 +3,15 @@
     <string name="tv_length">Panjang</string>
     <string name="tv_width">Lebar</string>
     <string name="tv_height">Tinggi</string>
-    <string name="tv_calculate">Hitung</string>
+    <string name="bt_calculate">Hitung</string>
     <string name="tv_result">Hasil</string>
+    <string name="bt_profile">Pindah ke Halaman Profil</string>
+    <string name="tv_profile">INPUT PROFIL</string>
+    <string name="tv_name">Nama</string>
+    <string name="tv_email">Email</string>
+    <string name="tv_my_profile">PROFIL SAYA</string>
+    <string name="tv_tahun">Tahun Lahir</string>
+    <string name="bt_back">Kembali ke halaman awal</string>
+    <string name="nama_mhs">Muhammad Rizqy Ath-Thaariq</string>
+    <string name="nim_mhs">201055001</string>
 </resources>
