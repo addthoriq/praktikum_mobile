@@ -37,41 +37,45 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View) {
         // cek Tombol untuk Hitung
-        if (v.id == R.id.btn_hitung){
-            val inputLength = etLength.text.toString().trim()
-            val inputWidth = etWidth.text.toString().trim()
-            val inputHeight = etHeight.text.toString().trim()
+        when (v.id){
+            R.id.btn_hitung -> {
+                val inputLength = etLength.text.toString().trim()
+                val inputWidth = etWidth.text.toString().trim()
+                val inputHeight = etHeight.text.toString().trim()
 
-            var isEmptyFields = false
+                var isEmptyFields = false
 
-            // Validasi apakah inputan masih ada yang kosong
-            if (inputLength.isEmpty()){
-                isEmptyFields = true
-                etLength.error = "Field ini tidak boleh kosong"
-            }
-            if (inputWidth.isEmpty()){
-                isEmptyFields = true
-                etWidth.error = "Field ini tidak boleh kosong"
-            }
-            if (inputHeight.isEmpty()){
-                isEmptyFields = true
-                etHeight.error = "Field ini tidak boleh kosong"
-            }
+                // Validasi apakah inputan masih ada yang kosong
+                if (inputLength.isEmpty()){
+                    isEmptyFields = true
+                    etLength.error = "Field ini tidak boleh kosong"
+                }
+                if (inputWidth.isEmpty()){
+                    isEmptyFields = true
+                    etWidth.error = "Field ini tidak boleh kosong"
+                }
+                if (inputHeight.isEmpty()){
+                    isEmptyFields = true
+                    etHeight.error = "Field ini tidak boleh kosong"
+                }
 
-            // Jika semua inputan valid, maka tampilkan hasilnya
-            if (!isEmptyFields){
-                val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
-                tvResult.text = volume.toString()
+                // Jika semua inputan valid, maka tampilkan hasilnya
+                if (!isEmptyFields){
+                    val volume = inputLength.toDouble() * inputWidth.toDouble() * inputHeight.toDouble()
+                    tvResult.text = volume.toString()
 
-                // Tambahkan Toast
-                Toast.makeText(applicationContext, tvResult.text, Toast.LENGTH_LONG).show()
+                    // Tambahkan Toast
+                    Toast.makeText(applicationContext, tvResult.text, Toast.LENGTH_LONG).show()
+                }
             }
-        } else if (v.id == R.id.btn_move_profile){
-            val inten = Intent(this@MainActivity, Profile::class.java)
-            startActivity(inten)
+            R.id.btn_move_profile -> {
+                val inten = Intent(this@MainActivity, Profile::class.java)
+                startActivity(inten)
+            }
+            R.id.btn_move_list -> {
+                val itn = Intent(this@MainActivity, RecyclerView::class.java)
+                startActivity(itn)
+            }
         }
     }
-
-
-
 }
